@@ -1,8 +1,7 @@
-
 "use client";
 import { useState, useEffect } from "react";  
+import StudentList from "@/components/ui/StudentList";
 
-// const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 const API_BASE_URL = "http://localhost:8000";
 
 const loadStudents = async () => {
@@ -22,13 +21,8 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
-      <h1>Students</h1>
-      <ul>
-        {students.map((student) => (
-          <li key={student.code}>{student.full_name}</li>
-        ))}
-      </ul>
+    <div className="container mx-auto p-4">
+      <StudentList />
     </div>
   );
 }
